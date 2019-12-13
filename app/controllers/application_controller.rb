@@ -14,6 +14,7 @@ class ApplicationController < ActionController::API
             JWT.decode(token, 'my_s3cr3t', true, algorithm: 'HS256')
             # JWT.decode => [{ "beef"=>"steak" }, { "alg"=>"HS256" }]
         rescue JWT::DecodeError
+            # return nil instead of crashing server
             nil
         end
     end
