@@ -12,6 +12,12 @@ A small rails API with JWT authorization implemented
   * runs plain text through [hashing function](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
     * one way function
   * store `digested` passwords in DB
+* JSON Web Tokens (JWT)
+  * Token-based authentication is stateless.
+  *  We are not storing any information about a logged in user on the server (which also means we don't need a model or table for our user sessions).
+  *   No stored information means our application can scale and add more machines as necessary without worrying about where a user is logged in. 
+  *   Instead, the client (browser) stores a token and sends that token along with every authenticated request.
+  *   Instead of storing a plaintext username, or user_id, we can encode user data with JSON Web Tokens (JWT) and store that encoded token client-side.
 
 
 # External Research Resources
