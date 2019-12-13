@@ -18,6 +18,21 @@ A small rails API with JWT authorization implemented
   *   No stored information means our application can scale and add more machines as necessary without worrying about where a user is logged in. 
   *   Instead, the client (browser) stores a token and sends that token along with every authenticated request.
   *   Instead of storing a plaintext username, or user_id, we can encode user data with JSON Web Tokens (JWT) and store that encoded token client-side.
+  *   ![](https://camo.githubusercontent.com/27f5919605d867b1e3d534be6c500b74466ef10b/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f66325a684d2e706e67)
+  * Here is the JWT authentication flow for logging in:
+    * An already existing user requests access with their username and password
+    The app validates these credentials
+    The app gives a signed token to the client
+    The client stores the token and presents it with every request. This token is effectively the user's access pass––it proves to our server that they are who they claim to be.
+  * JWTs are composed of three strings separated by periods
+    * `aaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbb.ccccccccccccccccccc`
+      * aaaaa = Header
+      * bbbbb = payload
+        * who this person is, and their id in our database
+      * ccccc = signature
+        * The signature is a hash of the header and the payload. It is hashed with a secret key, that we will provide (and should store in an environment variable using a gem like [Figaro](https://github.com/laserlemon/figaro#getting-started))
+    
+
 
 
 # External Research Resources
@@ -32,3 +47,4 @@ A small rails API with JWT authorization implemented
 * [(StackOverflow): How can I “pretty” format my JSON output in Ruby on Rails?](https://stackoverflow.com/questions/86653/how-can-i-pretty-format-my-json-output-in-ruby-on-rails?noredirect=1)
 * [(StackOverflow): sending nested json object using postman](https://stackoverflow.com/questions/26705782/sending-nested-json-object-using-postman#26919793)
 * [(Github): rails http status codes](https://gist.github.com/mlanett/a31c340b132ddefa9cca)
+* [JWT](https://jwt.io/#debugger)
