@@ -31,8 +31,18 @@ A small rails API with JWT authorization implemented
         * who this person is, and their id in our database
       * ccccc = signature
         * The signature is a hash of the header and the payload. It is hashed with a secret key, that we will provide (and should store in an environment variable using a gem like [Figaro](https://github.com/laserlemon/figaro#getting-started))
-    
-
+* JWT Methods
+  * JWT.encode
+    * takes 3 arguments
+      * a payload to encode
+      * an application secret of the user's choice
+      * an optional third that can be used to specify the hashing algorithm used
+    * This method returns a JWT as a string
+  * JWT.decode
+    * takes 3 arguments
+      * a JWT as a string
+      * an application secret
+      * optionally––a hashing algorithm
 
 
 # External Research Resources
