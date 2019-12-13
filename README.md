@@ -52,6 +52,8 @@ fetch('http://localhost:3000/api/v1/profile', {
   }
 })
 ```
+* Authorized action, in ApplicationController
+  * It wouldn't make sense to ask our users to be logged in before they create an account. This circular logic will make it impossible for users to authenticate into the app. How can a user create an account if our app asks them to be logged in or authorized to do so? Skipping the before action 'unlocks' this portion of our app.
 
 
 # External Research Resources
