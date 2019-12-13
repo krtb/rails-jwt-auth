@@ -43,6 +43,15 @@ A small rails API with JWT authorization implemented
       * a JWT as a string
       * an application secret
       * optionally––a hashing algorithm
+* JWT Fetch must have token
+```js
+fetch('http://localhost:3000/api/v1/profile', {
+  method: 'GET',
+  headers: {
+    Authorization: `Bearer <token>`
+  }
+})
+```
 
 
 # External Research Resources
