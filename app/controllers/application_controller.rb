@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::API
-    # all controllers inherit from ApplicationController
+    before_action :authorized
+    # will call the authorized method before anything else happens in our app. 
+    # This will effectively lock down the entire application. 
+
+
     def encode_token(payload)
         # payload => { beef: 'steak' }
         JWT.encode(payload, 'my_s3cr3t')
@@ -38,5 +42,11 @@ class ApplicationController < ActionController::API
     def logged_in?
         # returns truthy or falsey, dependent on return value of current_user
         !!current_user
+    end
+
+
+    def authorized
+        # lock down our application to prevent unauthorized access:
+        render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
     end
 end
