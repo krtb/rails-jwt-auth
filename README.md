@@ -7,6 +7,11 @@ A small rails API with JWT authorization implemented
   * ActiveModel::Serializer
     * provides a way of creating custom JSON by representing each resource as a class that inherits from ActiveModel::Serializer
     * last commit to repo was in 2018, alternatives to for later change below in links
+* BCRYPT
+  * gives capability to [salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) Users
+  * runs plain text through [hashing function](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
+    * one way function
+  * store `digested` passwords in DB
 
 
 # External Research Resources
