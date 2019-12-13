@@ -13,4 +13,9 @@ class ApplicationController < ActionController::API
         # JWT.decode => [{ "beef"=>"steak" }, { "alg"=>"HS256" }]
         # [0] gives us the payload { "beef"=>"steak" }
     end
+
+    def auth_header
+    # { 'Authorization': 'Bearer <token>' }
+    request.headers['Authorization']
+  end
 end
