@@ -25,7 +25,7 @@ A small rails API with JWT authorization implemented
     The app gives a signed token to the client
     The client stores the token and presents it with every request. This token is effectively the user's access pass––it proves to our server that they are who they claim to be.
   * JWTs are composed of three strings separated by periods
-    * `aaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbb.ccccccccccccccccccc`
+    * `aaaaaaa.bbbbbbbbb.ccccccccc`
       * aaaaa = Header
       * bbbbb = payload
         * who this person is, and their id in our database
