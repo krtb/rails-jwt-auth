@@ -24,3 +24,4 @@ A small rails API with JWT authorization implemented
 * [(GraphQL API Docs): GraphQL for Rails](https://graphql-ruby.org/development#setup)
 * [(Rails 6 API Docs): as_json/from_json methods](https://api.rubyonrails.org/classes/ActiveModel/Serializers/JSON.html)
 * [(StackOverflow): How can I “pretty” format my JSON output in Ruby on Rails?](https://stackoverflow.com/questions/86653/how-can-i-pretty-format-my-json-output-in-ruby-on-rails?noredirect=1)
+* [(StackOverflow): sending nested json object using postman](https://stackoverflow.com/questions/26705782/sending-nested-json-object-using-postman#26919793)
