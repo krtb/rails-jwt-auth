@@ -15,6 +15,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def profile
+    # If authorization fails, our server will never call UsersController#profile
     # authed user can access profile info
     render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
