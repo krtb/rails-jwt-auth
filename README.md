@@ -69,3 +69,4 @@ fetch('http://localhost:3000/api/v1/profile', {
 * [(StackOverflow): sending nested json object using postman](https://stackoverflow.com/questions/26705782/sending-nested-json-object-using-postman#26919793)
 * [(Github): rails http status codes](https://gist.github.com/mlanett/a31c340b132ddefa9cca)
 * [JWT](https://jwt.io/#debugger)
+* [(scothio.io): The Ins and Outs of Token Based Authentication](https://scotch.io/tutorials/the-ins-and-outs-of-token-based-authentication)
