@@ -6,6 +6,7 @@ class Api::V1::AuthController < ApplicationController
         @user = User.find_by(username: user_login_params[:username])
 
         #User#authenticate comes from BCrypt
+        # If the statement on the left side evaluates to false, Ruby will not even look at the statement on the right.
         if @user && @user.authenticate(user_login_params[:password])
         # encode token comes from ApplicationController
         token = encode_token({ user_id: @user.id })
