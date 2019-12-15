@@ -56,6 +56,15 @@ fetch('http://localhost:3000/api/v1/profile', {
   * It wouldn't make sense to ask our users to be logged in before they create an account. This circular logic will make it impossible for users to authenticate into the app. How can a user create an account if our app asks them to be logged in or authorized to do so? Skipping the before action 'unlocks' this portion of our app.
 * Client should send JWT along with every authenticated request
 ![](https://cdn.scotch.io/scotchy-uploads/2014/11/tokens-traditional.png)
+  * Sample Request
+```js
+fetch('http://localhost:3000/api/v1/profile', {
+  method: 'GET',
+  headers: {
+    Authorization: `Bearer <token>`
+  }
+})
+```
 
 # External Research Resources
 * [(Sitepoint): Active Model Serializers, Rails, and JSON](https://www.sitepoint.com/active-model-serializers-rails-and-json-oh-my/)
