@@ -46,7 +46,8 @@ class ApplicationController < ActionController::API
 
 
     def authorized
-        # lock down our application to prevent unauthorized access:
+        # lock down our application to prevent unauthorized access
+        # ApplicationController calls authorized before any other controller methods are called.
         render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
     end
 end
