@@ -7,6 +7,7 @@ class Api::V1::AuthController < ApplicationController
 
         #User#authenticate comes from BCrypt
         # If the statement on the left side evaluates to false, Ruby will not even look at the statement on the right.
+        # Without this catch, we'd get a NoMethodError (undefined method 'authenticate' for nil:NilClass)
         if @user && @user.authenticate(user_login_params[:password])
         # encode token comes from ApplicationController
         token = encode_token({ user_id: @user.id })
