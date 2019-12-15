@@ -14,6 +14,11 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  def profile
+    # authed user can access profile info
+    render json: { user: UserSerializer.new(current_user) }, status: :accepted
+  end
+
   private
 
   def user_params
